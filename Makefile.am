@@ -1,5 +1,5 @@
 
-SUBDIRS = intl po parser kkstrtext kksystr kkconsui src share misc
+SUBDIRS = po parser kkstrtext kksystr kkconsui src share misc
 
 man_MANS = motor.1
 

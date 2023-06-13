@@ -1,7 +1,6 @@
-AC_INIT(aclocal.m4)
-AM_INIT_AUTOMAKE(motor, "3.4.0")
-
-AM_CONFIG_HEADER(config.h)
+AC_INIT([motor],[3.4.0])
+AC_CONFIG_SRCDIR([aclocal.m4])
+AM_INIT_AUTOMAKE
 
 AC_PROG_CC
 AC_PROG_CXX
@@ -63,9 +62,10 @@ AC_CHECK_LIB(ncurses, main,,
     [AC_CHECK_LIB(curses, main,, AC_MSG_ERROR(The ncurses terminal library is required in order to build the program))])
 
 ALL_LINGUAS="ru pl de zh_CN"
-AM_GNU_GETTEXT
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_REQUIRE_VERSION(0.18)
 
-AC_OUTPUT([Makefile
+AC_CONFIG_FILES([Makefile
     src/Makefile
     src/debugger/Makefile
     src/executor/Makefile
@@ -93,3 +93,4 @@ AC_OUTPUT([Makefile
     intl/Makefile
     motor.spec
 ])
+AC_OUTPUT
