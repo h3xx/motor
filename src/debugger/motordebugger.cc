@@ -13,6 +13,7 @@
 #include <sys/ioctl.h>
 #include <sys/wait.h>
 #include <signal.h>
+#include <memory>
 
 #ifdef __FreeBSD__
 #include <sys/consio.h>
